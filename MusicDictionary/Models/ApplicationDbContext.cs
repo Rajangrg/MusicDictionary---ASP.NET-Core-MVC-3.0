@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using MusicDictionary.Models;
 
 namespace MusicDictionary.Data
 {
@@ -11,6 +12,8 @@ namespace MusicDictionary.Data
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
-        }
+            
+    }
+        public DbSet<Music> Music { get; set; }
     }
 }
