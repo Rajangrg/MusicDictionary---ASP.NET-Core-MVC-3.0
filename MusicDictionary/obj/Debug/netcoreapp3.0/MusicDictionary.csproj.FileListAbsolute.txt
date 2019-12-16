@@ -147,3 +147,4 @@ D:\Project\Music Dictionary\MusicDictionary\obj\Debug\netcoreapp3.0\MusicDiction
 D:\Project\Music Dictionary\MusicDictionary\obj\Debug\netcoreapp3.0\Razor\Views\Music\Index.cshtml.g.cs
 D:\Project\Music Dictionary\MusicDictionary\obj\Debug\netcoreapp3.0\Razor\Views\Music\Create.cshtml.g.cs
 D:\Project\Music Dictionary\MusicDictionary\obj\Debug\netcoreapp3.0\Razor\Views\Music\Edit.cshtml.g.cs
+D:\Project\Music Dictionary\MusicDictionary\obj\Debug\netcoreapp3.0\Razor\Views\Music\Delete.cshtml.g.cs

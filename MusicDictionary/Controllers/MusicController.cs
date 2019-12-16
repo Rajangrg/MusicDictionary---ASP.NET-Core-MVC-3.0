@@ -51,9 +51,10 @@ namespace MusicDictionary.Controllers
                 return NotFound();
             }
 
+            //retrive from database
             var editArtist = await _musicDb.Music.SingleOrDefaultAsync(m => m.Id == id);
 
-            if(editArtist == null)
+            if (editArtist == null)
             {
                 return NotFound();
             }
@@ -64,7 +65,7 @@ namespace MusicDictionary.Controllers
         //Edit [POST]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public  async Task<IActionResult> Edit(Music artist)
+        public async Task<IActionResult> Edit(Music artist)
         {
             if (ModelState.IsValid)
             {
@@ -74,6 +75,40 @@ namespace MusicDictionary.Controllers
             }
 
             return View();
+        }
+
+        //GET - Delete 
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+
+            var artistResult = await _musicDb.Music.SingleOrDefaultAsync(m => m.Id == id);
+
+            if (artistResult == null)
+            {
+                return NotFound();
+            }
+
+            return View(artistResult);
+        }
+
+        //Delete [POST]
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> RemoveArtist(int? id)
+        {
+
+            var artistResult = await _musicDb.Music.SingleOrDefaultAsync(m => m.Id == id);
+
+            _musicDb.Remove(artistResult);
+
+            await _musicDb.SaveChangesAsync();
+            return RedirectToAction("Index");
+
         }
 
     }
