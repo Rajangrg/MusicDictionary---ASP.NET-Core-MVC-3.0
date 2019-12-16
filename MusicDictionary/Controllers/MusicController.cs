@@ -15,10 +15,18 @@ namespace MusicDictionary.Controllers
         {
             _musicDb = musicDb;
         }
+        //default landing page
         public IActionResult Index()
         {
             var result = _musicDb.Music.ToList();
             return View(result);
         }
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+
     }
 }

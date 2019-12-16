@@ -1,0 +1,71 @@
+﻿@model MusicDictionary.Models.Music
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Add New Artist</h1>
+<br />
+
+<form asp-action="Create">
+    <div class="Container">
+        <div class="form-group">
+            <div class="row">
+                <div class="col-sm-1">
+                    <!-- automatically get the title from the model-->
+                    <label asp-for="Name"></label>
+                </div>
+                <div class="col-sm-4">
+                    <input asp-action="Name" class="form-control" />
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-sm-1">
+                    <label asp-for="Genre"></label>
+                </div>
+                <div class="col-sm-4">
+                    <input asp-action="Genre" class="form-control" />
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-sm-1">
+                    <label asp-for="SubGenre"></label>
+                </div>
+                <div class="col-sm-4">
+                    <input asp-action="SubGenre" class="form-control" />
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-sm-1">
+                    <label asp-for="Country"></label>
+                </div>
+                <div class="col-sm-4">
+                    <input asp-action="Country" class="form-control" />
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-sm-1">
+                    <label asp-for="City"></label>
+                </div>
+                <div class="col-sm-4">
+                    <input asp-action="City" class="form-control" />
+                </div>
+            </div>
+        </div>
+        <br />
+        <div class="form-group">
+            <input type="Submit" value="Create" class="btn btn-primary"/>
+            <a asp-action="Index" asp-controller="Movie" class="btn btn-success">Back to List</a>
+        </div>
+    </div>
+</form>
+

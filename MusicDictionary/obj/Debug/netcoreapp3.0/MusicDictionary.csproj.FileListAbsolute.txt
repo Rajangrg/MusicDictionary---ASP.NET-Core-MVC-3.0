@@ -145,3 +145,4 @@ D:\Project\Music Dictionary\MusicDictionary\bin\Debug\netcoreapp3.0\zh-Hant\Micr
 D:\Project\Music Dictionary\MusicDictionary\obj\Debug\netcoreapp3.0\MusicDictionary.MvcApplicationPartsAssemblyInfo.cs
 D:\Project\Music Dictionary\MusicDictionary\obj\Debug\netcoreapp3.0\MusicDictionary.MvcApplicationPartsAssemblyInfo.cache
 D:\Project\Music Dictionary\MusicDictionary\obj\Debug\netcoreapp3.0\Razor\Views\Music\Index.cshtml.g.cs
+D:\Project\Music Dictionary\MusicDictionary\obj\Debug\netcoreapp3.0\Razor\Views\Music\Create.cshtml.g.cs

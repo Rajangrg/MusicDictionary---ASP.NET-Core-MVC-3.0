@@ -14,6 +14,8 @@ namespace MusicDictionary.Models
         [Required]
         public string Name { get; set; }
         [Required]
+        public string Genre { get; set; }
+        [Required]
         public string SubGenre { get; set; }
         [Required]
         public string Country { get; set; }
