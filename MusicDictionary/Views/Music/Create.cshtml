@@ -8,8 +8,10 @@
 <h1>Add New Artist</h1>
 <br />
 
-<form asp-action="Create">
+<form asp-action="Create" method="post">
     <div class="Container">
+        <!-- builtin validation-->
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <div class="form-group">
             <div class="row">
                 <div class="col-sm-1">
@@ -17,8 +19,10 @@
                     <label asp-for="Name"></label>
                 </div>
                 <div class="col-sm-4">
-                    <input asp-action="Name" class="form-control" />
+                    <input asp-for="Name" class="form-control" />
                 </div>
+                <!-- executing builtin validation error message-->
+                <span asp-validation-for="Name" class="text-danger"></span>
             </div>
         </div>
         <div class="form-group">
@@ -27,8 +31,9 @@
                     <label asp-for="Genre"></label>
                 </div>
                 <div class="col-sm-4">
-                    <input asp-action="Genre" class="form-control" />
+                    <input asp-for="Genre" class="form-control" />
                 </div>
+                <span asp-validation-for="Genre" class="text-danger"></span>
             </div>
         </div>
         <div class="form-group">
@@ -37,8 +42,9 @@
                     <label asp-for="SubGenre"></label>
                 </div>
                 <div class="col-sm-4">
-                    <input asp-action="SubGenre" class="form-control" />
+                    <input asp-for="SubGenre" class="form-control" />
                 </div>
+                <span asp-validation-for="SubGenre" class="text-danger"></span>
             </div>
         </div>
         <div class="form-group">
@@ -47,8 +53,9 @@
                     <label asp-for="Country"></label>
                 </div>
                 <div class="col-sm-4">
-                    <input asp-action="Country" class="form-control" />
+                    <input asp-for="Country" class="form-control" />
                 </div>
+                <span asp-validation-for="Country" class="text-danger"></span>
             </div>
         </div>
         <div class="form-group">
@@ -57,14 +64,14 @@
                     <label asp-for="City"></label>
                 </div>
                 <div class="col-sm-4">
-                    <input asp-action="City" class="form-control" />
+                    <input asp-for="City" class="form-control" />
                 </div>
             </div>
         </div>
         <br />
         <div class="form-group">
-            <input type="Submit" value="Create" class="btn btn-primary"/>
-            <a asp-action="Index" asp-controller="Movie" class="btn btn-success">Back to List</a>
+            <input type="submit" value="Create" class="btn btn-primary" />
+            <a asp-action="Index" asp-controller="Music" class="btn btn-success">Back to List</a>
         </div>
     </div>
 </form>

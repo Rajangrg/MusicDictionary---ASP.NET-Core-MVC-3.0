@@ -12,8 +12,42 @@
     <a asp-action="Create" class="btn btn-primary">Add Artist</a>
 </p>
 
-@if(!Model.Any())
+@if (!Model.Any())
 {
     <p>No Artist yet will you like to add one?</p>
+}
+else
+{
+
+    <div class="border">
+        <table class="table">
+            <tr>
+                <th>@Html.DisplayNameFor(m => m.Name) </th>
+                <th>@Html.DisplayNameFor(m => m.Genre) </th>
+                <th>@Html.DisplayNameFor(m => m.SubGenre) </th>
+                <th>@Html.DisplayNameFor(m => m.Country) </th>
+                <th>@Html.DisplayNameFor(m => m.City) </th>
+            </tr>
+            @foreach (var musicItem in Model)
+            {
+                <tr>
+                    <td>@musicItem.Name</td>
+                    <td>@musicItem.Genre</td>
+                    <td>@musicItem.SubGenre</td>
+                    <td>@musicItem.Country</td>
+                    <td>@musicItem.City</td>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@musicItem.Id" class="btn btn-primary">Details</a>
+                        <a asp-action="Edit" asp-route-id="@musicItem.Id" class="btn btn-success">Edit</a>
+                        <a asp-action="Delete" asp-route-id="@musicItem.Id" class="btn btn-danger">Delete</a>
+                    </td>
+                 
+                   
+                </tr>
+            }
+        </table>
+
+
+    </div>
 }
 

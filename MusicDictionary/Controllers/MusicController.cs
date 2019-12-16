@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using MusicDictionary.Data;
+using MusicDictionary.Models;
 
 namespace MusicDictionary.Controllers
 {
@@ -27,6 +28,18 @@ namespace MusicDictionary.Controllers
             return View();
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(Music music)
+        {
+            if (ModelState.IsValid)
+            {
+                _musicDb.Add(music);
+                await _musicDb.SaveChangesAsync();
+                return RedirectToAction("Index");
+            }
+            return View(music);
+        }
 
     }
 }
